@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Student MAnagement</title>
+
+<script>
+
+
+var xmlhttp;
+
+function change()
+{
+	xmlhttp=new XMLHttpRequest();
+	xmlhttp.onload=show;
+	document.getElementById("p1").innerHTML="Welcome to javaScript";
+
+   xmlhttp.open("get","http://localhost:9420/student");
+   xmlhttp.send();
+   
+   
+   
+}
+function show(){
+	
+	alert(xmlhttp.responseText);
+	document.getElementById("p1").innerHTML=xmlhttp.responseText;
+}
+
+
+</script>
+
+</head>
+<body>
+<p id="p1"> test </p>
+
+<input type="button" onclick="change()" value="click me">
+
+
+</body>
+</html>
